@@ -1,0 +1,138 @@
+:root {
+  --text-center: center;
+  --primary-color: #382950;
+  --second-color: blueviolet;
+  --third-color: rgb(205, 185, 223);
+  --border-radius-round: 20px;
+  --border-btn: 1px solid;
+  --margin-20: 20px;
+  --padding-btn: 18px;
+  --transition-link: all 200ms ease-in-out;
+  --text-size-link: 25px;
+}
+
+body {
+  font-family: "Londrina Solid", cursive;
+  display: block;
+  padding-top: 100px;
+  margin: 0 auto;
+  text-align: var(--text-center);
+}
+h1,
+h2 {
+  color: var(--second-coor);
+  color: #382950;
+}
+h1 {
+  margin: 10px;
+  font-size: 80px;
+  line-height: 0.8;
+}
+h2 {
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+h3 {
+  margin: var(--margin-20);
+  color: rgb(191, 163, 218);
+}
+p {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: var(--text-center);
+}
+a {
+  border-radius: var(--border-radius-round);
+  margin: var(--margin-20);
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--third-color);
+}
+a:hover {
+  font-size: 23px;
+
+  color: var(--second-color);
+}
+.col-img {
+  background-color: var(--third-color);
+  border-radius: var(--border-radius-round);
+}
+.col-img a {
+  margin: 0px auto;
+}
+.contact-btn {
+  color: var(--third-color);
+  background-color: var(--second-color);
+  padding: var(--padding-btn);
+  border: var(--border-btn);
+
+  transition: var(--transition-link);
+}
+.about-btn {
+  padding: var(--padding-btn);
+  color: var(--second-color);
+  border: var(--border-btn);
+  transition: var(--transition-link);
+}
+
+.about-btn:hover {
+  color: var(--third-color);
+  font-size: var(--text-size-link);
+  background-color: var(--second-color);
+}
+.contact-btn:hover {
+  color: var(--second-color);
+  background-color: #fff;
+  font-size: var(--text-size-link);
+}
+.section {
+  display: flex;
+  justify-content: var(--text-center);
+  width: 80%;
+  margin: 0 auto;
+}
+/*********/
+
+.content {
+  width: 80%;
+  margin: 0px auto;
+}
+
+#contactEmail a {
+  color: blueviolet;
+  font-size: var(--text-size-link);
+  margin: 0;
+  padding: 0;
+}
+#contactEmail a:hover {
+  font-size: 28px;
+  text-decoration: underline;
+}
+.section .col-sm-4 {
+  /*  background-color: var(--third-color);*/
+  border-radius: var(--border-radius-round);
+}
+.section .col-sm-4 img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#h1-title-about {
+  margin: var(--margin-20);
+  margin-top: 80px;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .contact-btn {
+    font-size: 15px;
+  }
+  .about-btn {
+    font-size: 15px;
+  }
+}

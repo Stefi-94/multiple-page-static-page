@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Final Homework</title>
+    <style>
+      html {
+        height: auto;
+        background-image: linear-gradient(#2a3d66, #5c2a66);
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-width: 100%;
+      }
+      body {
+        text-align: center;
+        color: #f0dff0;
+        font-family: "Ariel";
+      }
+      h1 {
+        font-size: 48px;
+
+        margin-left: 300px;
+        margin-right: 300px;
+        border-bottom: 1px solid #94b0ec;
+        border-top: 1px solid #94b0ec;
+        padding: 20px;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      h3 {
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 100;
+      }
+
+      div {
+        width: 700px;
+        margin: 0 auto;
+      }
+      ul {
+        list-style: none;
+        display: block;
+        margin: 0px auto;
+        padding: 0px;
+      }
+      li {
+        display: inline;
+        padding: 20px;
+      }
+      p {
+        font-size: 32px;
+      }
+      a {
+        color: #f0dff0;
+        text-transform: uppercase;
+        text-decoration: wavy;
+      }
+      a:hover {
+        cursor: pointer;
+        font-size: 35px;
+        font-weight: bolder;
+        color: #94b0ec;
+      }
+      button {
+        border: 2px;
+        border-radius: 60px;
+        color: white;
+        background-color: #796dce;
+        box-shadow: -10px -15px 20px #443e70, 10px 15px 20px #443e70;
+        font-size: 25px;
+        padding: 50px;
+        margin: 20px;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        background-color: rgb(181, 255, 255);
+        color: #5d54a4;
+        font-size: 32px;
+      }
+
+      .all-content {
+        width: 1000px;
+        /*background-color doesn't work with gradient backgrounds*/
+        background-image: linear-gradient(#5c2a66, #2a3d66);
+        margin: 0px auto;
+        padding: 10px;
+        border-radius: 15px;
+      }
+      .big-img {
+        max-width: 900px;
+        display: block;
+        margin: 0px auto;
+        border-radius: 5px;
+      }
+      .history {
+        font-size: 25px;
+        font-weight: 100;
+        line-height: 40px;
+      }
+      .warnings {
+        font-size: 10px;
+        font-style: italic;
+      }
+      .social {
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="all-content">
+      <h1>Videogame</h1>
+      <h3>History, games, and more</h3>
+      <img
+        class="big-img"
+        src="https://compass-ssl.xbox.com/assets/01/7b/017bd7d0-e798-4b4b-a0f8-071bb1590a9b.jpg?n=Destiny-2_Poster-Image-1084_Beyond-Light_1920x1080_03.jpg"
+      />
+      <div class="history">
+        <h2>History of Videogames</h2>
+
+        A <strong>Video game </strong>or <strong>computer game</strong> is an
+        electronic game that involves interaction with a user interface or input
+        device – such as a joystick, controller, keyboard, or motion sensing
+        device – to generate visual feedback. This feedback is shown on a video
+        display device, such as a TV set, monitor, touchscreen, or virtual
+        reality headset. Video games are often augmented with audio feedback
+        delivered through speakers or headphones, and sometimes with other types
+        of feedback, including haptic technology.<br />
+        <a href="https://en.wikipedia.org/wiki/Video_game" target="_blank"
+          >Find more</a
+        >
+
+        <hr />
+
+        <h2>New Videogame</h2>
+        <p>
+          start to play the new game <strong><em>SheCodes!</em></strong> It's
+          fun!
+        </p>
+        <button><em>Start to play</em></button>
+        <p class="warnings">Just for people > 16 years old</p>
+      </div>
+      <hr />
+      <ul>
+        <li>
+          <a href="https://instagram.com" target="_blank">
+            <img
+              class="social"
+              src="https://www.italiandroid.it/wp-content/uploads/2019/09/instagram-1.jpg"
+          /></a>
+        </li>
+        <li>
+          <a href="https://facebook.com" target="_blank"
+            ><img
+              class="social"
+              src="https://www.facebook.com/images/fb_icon_325x325.png"
+          /></a>
+        </li>
+      </ul>
+
+      <script>
+        //funciont that control if you are 16 or more
+        function controlAge() {
+          let age = prompt("Hi! How old are?");
+          if (age >= 16) {
+            letsPlay();
+          } else {
+            tooYoung();
+          }
+        }
+        //funtion that is use if the controlage function is false
+        function tooYoung() {
+          let youngpic = document.querySelector(".big-img");
+          //change img
+          youngpic.setAttribute(
+            "src",
+            "https://www.fruttolo.it/sites/default/files/1260x500_6.jpg"
+          );
+          alert("Ask your parents! ");
+          changePage("<h2>Go play outside, you are too young &#x26BD</h2>");
+        }
+
+        //function if the controlage function is true
+        function letsPlay() {
+          //ask some question
+          let username = prompt("What is your user name?");
+          let email = prompt("What is your email? We will send you the game!");
+          changePage(
+            `<h2>Thank you, go to you email and start to play ${username}</h2>`
+          );
+        }
+
+        //function for change the after asking questions
+        function changePage(contentControl) {
+          //change the dic so no other content can see what was before just leave the image
+          let divHistory = document.querySelector(".history");
+          divHistory.innerHTML = contentControl;
+          //body auto for full cover background
+          let htmlBg = document.querySelector("html");
+          htmlBg.setAttribute("style", "height:100%;");
+          let body = document.querySelector("body");
+          body.setAttribute("style", "height:auto;");
+        }
+
+        //events for the click button action
+        let button = document.querySelector("button");
+        button.addEventListener("click", controlAge);
+      </script>
+    </div>
+  </body>
+</html>
